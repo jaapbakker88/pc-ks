@@ -21,74 +21,150 @@
 
 	</head>
 	<body>
-		<div id="header">
-			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-							<a href="/" class="navbar-brand">The Pilot Crowd</a>
+		<div id="site-wrapper">
+			<div id="site-canvas">
+				<div id="site-menu">
+					<h2>The Pilot Crowd</h2>
+					<ul class="slide-nav">
+						<li>Over ons</li>
+						<li>Hoe werkt het?</li>
+						<li><a href="" class="btn btn-default btn-block">Meld je aan!</a></li>
+					</ul>
+					<hr>
+					<div class="flex-row">
+						<div class="col">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
 						</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
+						<div class="col">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</div>
+						<div class="col">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</div>
 					</div>
 				</div>
-			</div>
+			
+				<header>
+					<div class="header__navbar">
+						<div class="container">
+							<div class="menu-click hidden-md hidden-lg hidden-sm">
+								<a href="#" class="toggle-nav">
+									<div class="bar"></div>
+									<div class="bar"></div>
+									<div class="bar"></div>
+								</a>
+							</div>
+							<div class="header__navbar--brand">
+								<img src="images/logo.svg">
+							</div>
+							<ul class="header__navbar--menu pull-right hidden-xs">
+								<li><a href="">Over ons</a></li>
+								<li><a href="">Hoe werkt het?</a></li>
+								<li><a href="" class="btn-rounded">Meld je aan!</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="header__content">
+						<div class="header__content--text">
+							<div class="container">
+								<h1>Wij helpen piloten sneller en goedkoper van hun lening af te komen.</h1>
+								<!-- <h2 class="lead">test test test</h2> -->
+							</div>
+						</div>
+						<div class="header__content--signup">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-8 col-md-offset-2">
+										<p class="text-center">Schrijf je in voor onze nieuwbrief en blijf op de hoogte van de laatste ontwikkelingen!</p>
+								
+										<div class="form-group-custom">
+											<input type="text" name="name" id="name" placeholder="Naam">
+											<input type="email" name="email" id="email" placeholder="E-mailadres">
+											<button class="btn">Schrijf je in!</button>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</header>
+				<div id="body">
+					<!--
+						Flash messages allow you to display once-off status messages to users, e.g. form
+						validation errors, success messages, etc
+					-->
+					{{#if messages}}
+					<div id="flash-messages" class="container">
+						{{#if messages.info}}
+						<div class="alert alert-info">
+								{{{flashMessages messages.info}}}
+						</div>
+						{{/if}}
+						{{#if messages.success}}
+						<div class="alert alert-success">
+								{{{flashMessages messages.success}}}
+						</div>
+						{{/if}}
+						{{#if messages.warning}}
+						<div class="alert alert-warning">
+								{{{flashMessages messages.warning}}}
+						</div>
+						{{/if}}
+						{{#if messages.error}}
+						<div class="alert alert-danger">
+								{{{flashMessages messages.error}}}
+						</div>
+						{{/if}}
+					</div>
+					{{/if}}
+					<!-- The content block should contain the body of your template's content-->
+					{{{body}}}
+				</div>
+		
+
+				<footer>
+					<div class="container">
+
+						<div class="row menu">
+							<div class="col-md-3">
+								<p class="menu-head">Menu</p>
+								<ul>
+									<li>Home</li>
+									<li>Over ons</li>
+									<li>Hoe werkt het?</li>
+									<li>Meld je aan</li>
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<p class="menu-head">Voor wie?</p>
+								<ul>
+									<li>Piloten</li>
+									<li>Ab initio</li>
+									<li>Investeerders</li>
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<p class="menu-head">Volg ons op</p>
+								<ul class="fa-ul">
+									<li><i class="fa-li fa fa-twitter"></i> Twitter</li>
+									<li><i class="fa-li fa fa-facebook"></i> Facebook</li>
+								</ul>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-md-12">
+								<p><small>&copy; The Pilot Crowd | Voorwaarden en reglement</small></p>
+								<img src="images/logo-blue.svg" class="svg" alt=""> 
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>	
 		</div>
-		<div id="body">
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
-				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
-				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
-				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
-				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
-			</div>
-			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
-		</div>
-		<div class="container">
-			<div id="footer">
-				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-			</div>
-		</div>
+
+
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
