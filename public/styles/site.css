@@ -8493,12 +8493,9 @@ footer hr {
     height: 2px;
     margin: 5px;
     background: #fff; }
-  .form-group-custom {
+  .form-group-custom form {
     display: block; }
   .form-group-custom input, .form-group-custom button {
     width: 100%; }
-  .form-group-custom input:first-child {
-    border-right: none;
-    border-bottom: 1px solid #fff; }
   .form-group-custom button {
     border-radius: 0 0px 4px 4px; } }
