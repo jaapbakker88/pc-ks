@@ -280,3 +280,38 @@ footer hr{
 	border-style: solid;
 
 }
+
+
+@media(max-width:767px){
+	.header__navbar--brand {
+		position: relative;
+	    width: 95px;
+	    margin: 0 auto;
+	    left: 0;
+	}
+	.header__navbar .menu-click {
+		display: inline-block;
+    	float: left;
+    	margin-top: 5px;
+	}
+	.header__navbar .menu-click .bar {
+		width: 30px;
+		height: 2px;
+		margin: 5px;
+		background: #fff;
+	}
+	.form-group-custom {
+		display: block;
+	}
+	.form-group-custom input, .form-group-custom button {
+		width: 100%;
+	}
+
+	.form-group-custom input:first-child {
+		border-right: none;
+		border-bottom: 1px solid #fff;
+	}
+	.form-group-custom button {
+		border-radius: 0 0px 4px 4px
+	}
+}
