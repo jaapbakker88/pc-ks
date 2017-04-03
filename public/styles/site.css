@@ -8410,7 +8410,7 @@ header {
 .header__content--signup {
   margin-bottom: 5em; }
 
-.form-group-custom {
+.form-group-custom form {
   font-size: 1em;
   display: flex;
   background: rgba(255, 255, 255, 0.9);
